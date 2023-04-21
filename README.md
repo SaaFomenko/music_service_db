@@ -7,4 +7,4 @@ Condition you see this [link](https://github.com/netology-code/sqlcpp-homeworks/
 ![ER-diagram for music service](./music_service_db.png)
 
 ## SQL code
-<./create_tb.sql>
+<https://github.com/SaaFomenko/music_service_db/blob/main/create_tb.sql>
