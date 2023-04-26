@@ -6,21 +6,29 @@ CREATE TABLE IF NOT EXISTS genre (
 CREATE TABLE IF NOT EXISTS musician (
 	id SERIAL PRIMARY KEY,
 	name VARCHAR(64) UNIQUE NOT NULL,
-	genre_id INTEGER NOT NULL REFERENCES genre(id)
 );
 
-ALTER TABLE genre ADD COLUMN 
-	musician_id INTEGER NOT NULL REFERENCES musician(id);
+CREATE TABLE IF NOT EXISTS genre_musician (
+	genre_id INTEGER REFERENCES genre(id),
+	musician_id INTEGER REFERENCES musician(id)
+);
+
+ALTER TABLE genre_musician ADD 
+	CONSTRAINT pk PRIMARY KEY (genre_id, musician_id);
 
 CREATE TABLE IF NOT EXISTS album (
 	id SERIAL PRIMARY KEY,
 	name VARCHAR(80) UNIQUE NOT NULL,
-	publication DATE NOT NULL,
-	musician_id INTEGER NOT NULL REFERENCES musician(id)
+	publication INTEGER NOT NULL,
 );
 
-ALTER TABLE musician ADD COLUMN
-	album_id INTEGER REFERENCES album(id);
+CREATE TABLE IF NOT EXISTS musician_album (
+	musician_id INTEGER REFERENCES musician(id),
+	album_id INTEGER REFERENCES album(id)
+);
+
+ALTER TABLE musician_album ADD 
+	CONSTRAINT pk PRIMARY KEY (musician_id, album_id);
 
 CREATE TABLE IF NOT EXISTS track (
 	id SERIAL PRIMARY KEY,
@@ -32,7 +40,7 @@ CREATE TABLE IF NOT EXISTS track (
 CREATE TABLE IF NOT EXISTS collection (
 	id SERIAL PRIMARY KEY,
 	name VARCHAR(128) UNIQUE NOT NULL,
-	publication DATE NOT NULL
+	publication INTEGER NOT NULL
 );
 
 CREATE TABLE IF NOT EXISTS collection_track (
