@@ -25,3 +25,4 @@ Condition you see this [link](https://github.com/netology-code/sqlcpp-homeworks/
 <https://github.com/SaaFomenko/music_service_db/blob/insert-data/add_data.sql>
 
 ### Code for SELECT data
+<https://github.com/SaaFomenko/music_service_db/blob/insert-data/select_data.sql>
