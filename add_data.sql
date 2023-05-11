@@ -13,6 +13,9 @@ INSERT INTO genre(id, name)
 INSERT INTO genre(id, name)
 	VALUES(5, 'русская эстрада');
 
+INSERT INTO genre(id, name)
+	VALUES(6, 'русская поп-музыка');
+
 INSERT INTO musician(id, name)
 	VALUES(1, 'Марк Эмлер');
 
@@ -43,6 +46,9 @@ INSERT INTO musician(id, name)
 INSERT INTO musician(id, name)
 	VALUES(10, 'Академический Ансамбль песни и пляски Российской Армии имени А.В. Александрова');
 
+INSERT INTO musician(id, name)
+	VALUES(11, 'Георгий Виноградов');
+
 INSERT INTO genre_musician(genre_id, musician_id)
 	VALUES(1, 1);
 
@@ -72,6 +78,9 @@ INSERT INTO genre_musician(genre_id, musician_id)
 
 INSERT INTO genre_musician(genre_id, musician_id)
 	VALUES(5, 10);
+
+INSERT INTO genre_musician(genre_id, musician_id)
+	VALUES(6, 11);
 
 INSERT INTO album(id, name, publication)
 	VALUES(1, 'Популярная советская классика', 2016);
@@ -112,6 +121,9 @@ INSERT INTO album(id, name, publication)
 INSERT INTO album(id, name, publication)
 	VALUES(13, 'Поют солдаты о любви…', 2020);
 
+INSERT INTO album(id, name, publication)
+	VALUES(14, 'Избранное', 2015);
+
 INSERT INTO musician_album(musician_id, album_id)
 	VALUES(1, 1);
 
@@ -147,6 +159,12 @@ INSERT INTO musician_album(musician_id, album_id)
 
 INSERT INTO musician_album(musician_id, album_id)
 	VALUES(9, 12);
+
+INSERT INTO musician_album(musician_id, album_id)
+	VALUES(10, 13);
+
+INSERT INTO musician_album(musician_id, album_id)
+	VALUES(11, 14);
 
 INSERT INTO track(id, name, duration, album_id)
 	VALUES(1, 'Гаянэ: Танец с саблями', '2:21', 1);
@@ -188,10 +206,10 @@ INSERT INTO track(id, name, duration, album_id)
 	VALUES(13, 'Смуглянка', '2:51', 13);
 
 INSERT INTO track(id, name, duration, album_id)
-	VALUES(14, 'Действие 2 - Половецкая Пляска С Хором "Улетай На Крыльях Ветра"', '10:55', 2);
+	VALUES(14, 'Эх, дороги', '2:56', 14);
 
 INSERT INTO track(id, name, duration, album_id)
-	VALUES(15, 'Действие 2 - Половецкая Пляска С Хором "Улетай На Крыльях Ветра"', '10:55', 2);
+	VALUES(15, 'Счастье моё', '2:49', 14);
 
 INSERT INTO collection(id, name, publication)
 	VALUES(1, 'Русские оперы, покорившие мир', 2018);
@@ -212,10 +230,10 @@ INSERT INTO collection(id, name, publication)
 	VALUES(6, 'Песни Победы. 75-летию посвящается', 2020);
 
 INSERT INTO collection(id, name, publication)
-	VALUES(7, 'Русские оперы, покорившие мир', 2018);
+	VALUES(7, 'Утомлённое солнце', 2019);
 
 INSERT INTO collection(id, name, publication)
-	VALUES(8, 'Русские оперы, покорившие мир', 2018);
+	VALUES(8, '55 песен о любви — мужчины женщинам', 2021);
 
 INSERT INTO collection_track(collection_id, track_id)
  VALUES(1, 1);
@@ -248,16 +266,10 @@ INSERT INTO collection_track(collection_id, track_id)
  VALUES(6, 13);
 
 INSERT INTO collection_track(collection_id, track_id)
- VALUES(1, 1);
+ VALUES(7, 13);
 
 INSERT INTO collection_track(collection_id, track_id)
- VALUES(1, 12);
+ VALUES(7, 14);
 
 INSERT INTO collection_track(collection_id, track_id)
- VALUES(1, 13);
-
-INSERT INTO collection_track(collection_id, track_id)
- VALUES(1, 14);
-
-INSERT INTO collection_track(collection_id, track_id)
- VALUES(1, 15);
+ VALUES(8, 15);
