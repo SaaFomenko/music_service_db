@@ -124,6 +124,9 @@ INSERT INTO album(id, name, publication)
 INSERT INTO album(id, name, publication)
 	VALUES(14, 'Избранное', 2015);
 
+INSERT INTO album(id, name, publication)
+	VALUES(15, 'Лист: Симфонические поэмы, Nos. 7, 10, 9', 2018);
+
 INSERT INTO musician_album(musician_id, album_id)
 	VALUES(1, 1);
 
@@ -165,6 +168,9 @@ INSERT INTO musician_album(musician_id, album_id)
 
 INSERT INTO musician_album(musician_id, album_id)
 	VALUES(11, 14);
+
+INSERT INTO musician_album(musician_id, album_id)
+	VALUES(1, 15);
 
 INSERT INTO track(id, name, duration, album_id)
 	VALUES(1, 'Гаянэ: Танец с саблями', '2:21', 1);
@@ -210,6 +216,9 @@ INSERT INTO track(id, name, duration, album_id)
 
 INSERT INTO track(id, name, duration, album_id)
 	VALUES(15, 'Счастье моё', '2:49', 14);
+
+INSERT INTO track(id, name, duration, album_id)
+	VALUES(16, 'Симфоническая поэма No. 7 «Праздничные звуки», S. 101', '19:09', 15);
 
 INSERT INTO collection(id, name, publication)
 	VALUES(1, 'Русские оперы, покорившие мир', 2018);
