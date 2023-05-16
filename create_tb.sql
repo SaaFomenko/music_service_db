@@ -5,7 +5,7 @@ CREATE TABLE IF NOT EXISTS genre (
 
 CREATE TABLE IF NOT EXISTS musician (
 	id SERIAL PRIMARY KEY,
-	name VARCHAR(80) UNIQUE NOT NULL,
+	name VARCHAR(80) UNIQUE NOT NULL
 );
 
 CREATE TABLE IF NOT EXISTS genre_musician (
@@ -14,12 +14,12 @@ CREATE TABLE IF NOT EXISTS genre_musician (
 );
 
 ALTER TABLE genre_musician ADD 
-	CONSTRAINT pk PRIMARY KEY (genre_id, musician_id);
+	CONSTRAINT gm_pk PRIMARY KEY (genre_id, musician_id);
 
 CREATE TABLE IF NOT EXISTS album (
 	id SERIAL PRIMARY KEY,
 	name VARCHAR(80) UNIQUE NOT NULL,
-	publication INTEGER NOT NULL,
+	publication INTEGER NOT NULL
 );
 
 CREATE TABLE IF NOT EXISTS musician_album (
@@ -28,7 +28,7 @@ CREATE TABLE IF NOT EXISTS musician_album (
 );
 
 ALTER TABLE musician_album ADD 
-	CONSTRAINT pk PRIMARY KEY (musician_id, album_id);
+	CONSTRAINT ma_pk PRIMARY KEY (musician_id, album_id);
 
 CREATE TABLE IF NOT EXISTS track (
 	id SERIAL PRIMARY KEY,
@@ -49,4 +49,4 @@ CREATE TABLE IF NOT EXISTS collection_track (
 );
 
 ALTER TABLE collection_track ADD 
-	CONSTRAINT pk PRIMARY KEY (collection_id, track_id);
+	CONSTRAINT ct_pk PRIMARY KEY (collection_id, track_id);
