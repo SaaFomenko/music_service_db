@@ -19,7 +19,7 @@ SELECT name FROM track WHERE name SIMILAR TO '%(моё|my )%';
 /* 1. Количество исполнителей в каждом жанре. */
 SELECT name, COUNT(musician_id) musician_q FROM genre g
 JOIN genre_musician m ON g.id = m.genre_id
-GROUP BY f.name;
+GROUP BY g.name;
 
 /* 2. Количество треков, вошедших в альбомы 2019–2020 годов. */
 SELECT COUNT(album_id) FROM track t 
